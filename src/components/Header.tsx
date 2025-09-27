@@ -11,11 +11,11 @@ function Header() {
     setIsDark(getCurrentTheme() === "dark");
   };
   return (
-    <div className="flex h-12 w-full items-center bg-white shadow">
+    <div className="flex h-12 w-full items-center bg-white shadow transition-colors duration-200 dark:bg-gray-800 dark:text-white">
       <h1 className="w-full text-center text-2xl font-semibold">Users CRUD</h1>
       <motion.button
         whileTap={{ scale: 0.8 }}
-        className="absolute right-4 rounded p-1 transition-colors duration-300 hover:bg-gray-200"
+        className="absolute right-4 rounded p-1 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
         onClick={handleTheme}
         aria-label="Toggle Dark Mode"
       >

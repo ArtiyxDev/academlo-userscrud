@@ -33,7 +33,7 @@ function UserCard({ user, className, onEdit, onDelete }: UserCardProps) {
 
   return (
     <Card
-      className={`rounded-lg border border-gray-200 p-5 shadow-md transition-all duration-200 hover:shadow-lg dark:border-gray-700 ${className}`}
+      className={`rounded-lg border border-gray-200 p-5 shadow-md transition-all duration-200 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 ${className}`}
     >
       <div className="flex flex-col space-y-3">
         {/* Header con nombre y botones */}

@@ -74,8 +74,11 @@ function UserDialog({
 
   return (
     <Dialog isOpen={isOpen} onClose={onClose}>
-      <Card>
-        <form onSubmit={handleSubmit(onSubmit)} className="w-80 space-y-4 p-4">
+      <Card className="dark:bg-gray-800">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-80 space-y-4 p-4 dark:text-white"
+        >
           <h2 className="mb-4 w-full text-center text-2xl font-bold">
             {mode === "edit" ? "Edit User" : "Create New User"}
           </h2>

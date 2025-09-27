@@ -36,14 +36,14 @@ function TablePager({
 
   return (
     <div
-      className={`relative my-4 flex items-center justify-center gap-0.5 text-gray-600 ${className}`}
+      className={`relative my-4 flex items-center justify-center gap-0.5 text-gray-600 dark:text-gray-400 ${className}`}
     >
       <button
-        className="absolute left-2 flex rounded-md bg-gray-300 p-2 hover:bg-gray-400 dark:hover:bg-gray-700"
+        className="absolute left-2 flex rounded-md bg-gray-300 p-2 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600"
         title="Add User"
         onClick={onAddUser}
       >
-        <LuPlus size={22} className="text-gray-600" />
+        <LuPlus size={22} className="text-gray-600 dark:text-gray-300" />
         <span>Add User</span>
       </button>
       <div className="relative">
@@ -54,7 +54,7 @@ function TablePager({
             setItemsPerPage?.(Number(e.target.value));
             setSelectOpen(false);
           }}
-          className="appearance-none rounded border border-gray-400 p-1 pr-6"
+          className="appearance-none rounded border border-gray-400 p-1 pr-6 dark:border-gray-600"
           onClick={() => setSelectOpen(true)}
           onBlur={() => setSelectOpen(false)}
         >
@@ -72,7 +72,7 @@ function TablePager({
       </div>
       <LuChevronsLeft onClick={() => handleChangePage(1)} />
       <LuChevronLeft onClick={() => handleChangePage(currentPage - 1)} />
-      <span className="size-8 rounded-md bg-gray-200 text-center text-xl font-semibold">
+      <span className="size-8 rounded-md bg-gray-200 text-center text-xl font-semibold dark:bg-gray-600 dark:text-gray-300">
         {currentPage}
       </span>
       <LuChevronRight onClick={() => handleChangePage(currentPage + 1)} />
