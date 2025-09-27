@@ -196,14 +196,8 @@ const useJsonApi = (): UseJsonApiReturn => {
         };
 
         // Simulate API validation
-        if (
-          !user.firstName.trim() ||
-          !user.lastName.trim() ||
-          !user.email.trim()
-        ) {
-          throw new Error(
-            "First name, last name and email are required fields",
-          );
+        if (!user.name.trim() || !user.email.trim()) {
+          throw new Error("Name and email are required fields");
         }
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email)) {

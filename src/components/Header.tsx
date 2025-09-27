@@ -11,7 +11,7 @@ function Header() {
     setIsDark(getCurrentTheme() === "dark");
   };
   return (
-    <div className="flex h-12 items-center bg-white shadow">
+    <div className="flex h-12 w-full items-center bg-white shadow">
       <h1 className="w-full text-center text-2xl font-semibold">Users CRUD</h1>
       <motion.button
         whileTap={{ scale: 0.8 }}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "user_1695456789123_abc123def",
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "email": "juan.perez@example.com",
+    "birthDate": "1990-05-15",
+    "avatarUrl": "https://ui-avatars.com/api/?name=Juan+Perez&background=0D8ABC&color=fff"
+  },
+  {
+    "id": "user_1695456834567_def456ghi",
+    "firstName": "María",
+    "lastName": "González",
+    "email": "maria.gonzalez@example.com",
+    "birthDate": "1985-08-22",
+    "avatarUrl": "https://ui-avatars.com/api/?name=Maria+Gonzalez&background=FF6B6B&color=fff"
+  },
+  {
+    "id": "user_1695456889012_ghi789jkl",
+    "firstName": "Carlos",
+    "lastName": "Rodríguez",
+    "email": "carlos.rodriguez@example.com",
+    "birthDate": "1992-12-03",
+    "avatarUrl": "https://ui-avatars.com/api/?name=Carlos+Rodriguez&background=4ECDC4&color=fff"
+  }
+]
