@@ -13,7 +13,7 @@ function SearchBar({
 }: SearchBarProps) {
   return (
     <div
-      className={`my-3 flex w-2/3 rounded bg-white p-2 shadow transition-colors duration-200 dark:bg-gray-800 ${className}`}
+      className={`my-3 flex w-2/3 rounded bg-white p-2 shadow transition-colors duration-200 lg:w-1/3 dark:bg-gray-800 ${className}`}
     >
       <input
         type="text"
