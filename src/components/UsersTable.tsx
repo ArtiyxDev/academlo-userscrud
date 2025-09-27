@@ -24,7 +24,9 @@ function UsersTable({
   onDeleteUser,
 }: UsersTableProps) {
   return (
-    <div className={`grid w-full gap-3 ${className}`}>
+    <div
+      className={`grid w-full gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ${className}`}
+    >
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
