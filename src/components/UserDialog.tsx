@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Card from "./Card";
 import Dialog from "./Dialog";
 import type { JsonUser, CreateUser } from "../types/api";
-import useJsonApi from "../hooks/useJsonApi";
+import useUsersApi from "../hooks/useUsersApi";
 
 interface UserDialogProps {
   user?: JsonUser | null;
@@ -20,7 +20,7 @@ function UserDialog({
   onClose,
   onUserSaved,
 }: UserDialogProps) {
-  const { createUser, updateUser, loading } = useJsonApi();
+  const { createUser, updateUser, loading } = useUsersApi();
   const {
     register,
     formState: { errors },
@@ -31,7 +31,8 @@ function UserDialog({
       firstName: "",
       lastName: "",
       email: "",
-      birthDate: "",
+      password: "",
+      birthday: "",
       avatarUrl: "",
     },
   });
@@ -43,7 +44,8 @@ function UserDialog({
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        birthDate: user.birthDate,
+        password: "", // No prellenar password en modo edición
+        birthday: user.birthday,
         avatarUrl: user.avatarUrl || "",
       });
     } else if (mode === "create") {
@@ -51,7 +53,8 @@ function UserDialog({
         firstName: "",
         lastName: "",
         email: "",
-        birthDate: "",
+        password: "",
+        birthday: "",
         avatarUrl: "",
       });
     }
@@ -136,15 +139,43 @@ function UserDialog({
           </fieldset>
 
           <fieldset className="m-0">
-            <label htmlFor="birthDate">Birth Date</label>
+            <label htmlFor="password">
+              Password
+              {mode === "create" && (
+                <span className="font-bold text-red-500">*</span>
+              )}
+            </label>
             <input
-              {...register("birthDate", { required: "Birth date is required" })}
+              {...register("password", {
+                required: mode === "create" ? "Password is required" : false,
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              })}
+              type="password"
+              placeholder={mode === "edit" ? "Leave empty to keep current" : ""}
+              className="w-full rounded border border-gray-400 p-2 transition-colors duration-200 focus:border-blue-500"
+            />
+            {errors.password && (
+              <span className="text-sm text-red-500">
+                {errors.password.message}
+              </span>
+            )}
+          </fieldset>
+
+          <fieldset className="m-0">
+            <label htmlFor="birthday">
+              Birthday<span className="font-bold text-red-500">*</span>
+            </label>
+            <input
+              {...register("birthday", { required: "Birthday is required" })}
               type="date"
               className="w-full rounded border border-gray-400 p-2 transition-colors duration-200 focus:border-blue-500"
             />
-            {errors.birthDate && (
+            {errors.birthday && (
               <span className="text-sm text-red-500">
-                {errors.birthDate.message}
+                {errors.birthday.message}
               </span>
             )}
           </fieldset>

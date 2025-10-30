@@ -9,7 +9,7 @@ interface UsersTableProps {
   page?: number;
   className?: string;
   onEditUser?: (user: JsonUser) => void;
-  onDeleteUser?: (userId: string) => void;
+  onDeleteUser?: (userId: number) => void;
 }
 
 function UsersTable({

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header, SearchBar, TablePager, UsersTable } from "./components";
 import { initTheme } from "./utils/toggleDarkTheme";
-import useJsonApi from "./hooks/useJsonApi";
+import useUsersApi from "./hooks/useUsersApi";
 
 import "./App.css";
 import UserDialog from "./components/UserDialog";
@@ -11,7 +11,7 @@ function App() {
   const [filterText, setFilterText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
-  const { users, loading, error, deleteUser, refreshUsers } = useJsonApi();
+  const { users, loading, error, deleteUser, refreshUsers } = useUsersApi();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogMode, setDialogMode] = useState<"create" | "edit">("create");
   const [selectedUser, setSelectedUser] = useState<JsonUser | null>(null);

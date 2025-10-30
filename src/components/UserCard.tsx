@@ -6,20 +6,20 @@ interface UserCardProps {
   user: JsonUser;
   className?: string;
   onEdit?: (user: JsonUser) => void;
-  onDelete?: (userId: string) => void;
+  onDelete?: (userId: number) => void;
 }
 
 function UserCard({ user, className, onEdit, onDelete }: UserCardProps) {
-  const formatBirthDate = (birthDate: string) => {
+  const formatBirthday = (birthday: string) => {
     try {
-      const date = new Date(birthDate);
+      const date = new Date(birthday);
       return date.toLocaleDateString("es-ES", {
         year: "numeric",
         month: "long",
         day: "numeric",
       });
     } catch {
-      return birthDate;
+      return birthday;
     }
   };
 
@@ -54,7 +54,7 @@ function UserCard({ user, className, onEdit, onDelete }: UserCardProps) {
 
           <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
             <LuCalendar size={16} className="text-gray-400" />
-            <span className="text-sm">{formatBirthDate(user.birthDate)}</span>
+            <span className="text-sm">{formatBirthday(user.birthday)}</span>
           </div>
         </div>
         {/* Botones de acción */}
